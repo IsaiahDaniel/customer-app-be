@@ -42,13 +42,11 @@ const searchCustomer = (0, express_async_handler_1.default)((req, res, next) => 
         return next(new ErrorMessage_1.default(`No customer with the name ${name} was found`, 404));
     }
     const customer = yield Customers_1.default.findOne({ name: name });
-    console.log("customer", customer);
     res.status(200).json({ success: true, data: customer });
 }));
 exports.searchCustomer = searchCustomer;
 const updateCustomer = (0, express_async_handler_1.default)((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const _customer = yield Customers_1.default.findById(req.params.id);
-    console.log("_customer", _customer);
     if (!_customer) {
         next(new ErrorMessage_1.default(`No customer with that id ${req.params.id} was found`, 404));
     }

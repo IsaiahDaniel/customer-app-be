@@ -40,8 +40,7 @@ const searchCustomer = asyncHandler(async (req, res, next) => {
 
   const customer = await Customer.findOne({ name: name });
 
-  console.log("customer", customer);
-
+  
   res.status(200).json({ success: true, data: customer });
 
 
@@ -49,8 +48,6 @@ const searchCustomer = asyncHandler(async (req, res, next) => {
 
 const updateCustomer = asyncHandler(async (req, res, next) => {
   const _customer = await Customer.findById(req.params.id);
-
-  console.log("_customer", _customer);
 
   if (!_customer) {
     next(
