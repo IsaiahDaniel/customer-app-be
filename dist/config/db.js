@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
 const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const mongoURI = process.env.MONGO_URI, process, env, MONGO_URI_PROD;
+        const mongoURI = process.env.MONGO_URI;
         const conn = yield (0, mongoose_1.connect)(mongoURI);
         console.log(`MongoDB connected - ${conn.connection.host}`);
     }
